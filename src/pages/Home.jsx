@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import EmptyWalletIcon from '../components/Icons/EmptyWalletIcon';
 import HomeIcon from '../components/Icons/HomeIcon';
 import LineArrowIcon from '../components/Icons/LineArrowIcon';
+import MoneyIcon from '../components/Icons/MoneyIcon';
 import SettingsIcon from '../components/Icons/SettingIcon';
 import TimerIcon from '../components/Icons/TimerIcon';
 import VideoAddIcon from '../components/Icons/VideoAddIcon';
@@ -14,9 +15,9 @@ const Home = () => {
   return (
     <>
       <div className={`zesha__box show`}>
-        <div className="zesha__ex-wrapper alert--bx shadow-lg rounded-2xl">
+        <div className="zesha__ex-wrapper alert--bx">
           <div
-            className="main-wrapper"
+            className="main-wrapper home"
             style={{
               overflowY: 'auto',
               height: '100%',
@@ -83,8 +84,8 @@ const Home = () => {
                 <h4>My recommendations</h4>
               </div>
 
-              <div class="w-full bg-white mt-1  relative rounded py-4 cursor-pointer ze_reco_box">
-                <div class="flex items-center justify-between flex-col gap-3 ze_reco_inner_box ">
+              <div class="ze_reco_box">
+                <div class="ze_reco_inner_box ">
                   <span class="text-[#046ED1]">
                     <VideoAddIcon />
                   </span>
@@ -92,6 +93,71 @@ const Home = () => {
                   <Link to="/" class="">
                     Set preferences to start
                   </Link>
+                </div>
+              </div>
+            </div>
+
+            <div className="ze_reco_section">
+              <div className="ze_subheader">
+                <h4>Recommended videos for today</h4>
+              </div>
+
+              <div class="ze_reco_box">
+                <div class="ze_reco_inner_box ">
+                  <span class="text-[#046ED1]">
+                    <VideoAddIcon />
+                  </span>
+                  <h5 class="">Stay tuned for recommended videos</h5>
+                </div>
+              </div>
+            </div>
+
+            <div className="ze_history_box">
+              <div className="ze_subheader">
+                <h4>Videos history</h4>
+                <Link to="/history">view all</Link>
+              </div>
+              <div className="divide-y divide-[#EEEFF2] py-6">
+                <div className="ze_history_main_card">
+                  <span className="icon-box">
+                    <VideoPlayIcon />
+                  </span>
+                  <div className="ze_history_main_box">
+                    <div className="ze_history_title">
+                      <h5 className="">
+                        <span>You viewed </span>2 videos <span>for</span> 30
+                        mins
+                      </h5>
+                      <span>24 TFUEL</span>
+                    </div>
+
+                    <div className="flex items-center justify-between w-full ze_history_subtitle">
+                      <span className="ze_history_date">Jan 05, 12:50</span>
+                      <span className="text-[#7F8691] text-xs font-normal">
+                        ~$12
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div className="ze_history_main_card">
+                  <span className="icon-box">
+                    <MoneyIcon />
+                  </span>
+                  <div className="ze_history_main_box">
+                    <div className="ze_history_title">
+                      <h5 className="">
+                        <span>You tipped </span>&ldquo;The Incessant&rdquo;
+                      </h5>
+                      <span>2 TFUEL</span>
+                    </div>
+
+                    <div className="flex items-center justify-between w-full ze_history_subtitle">
+                      <span className="ze_history_date">Jan 05, 12:50</span>
+                      <span className="text-[#7F8691] text-xs font-normal">
+                        ~$12
+                      </span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
