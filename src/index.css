@@ -107,6 +107,15 @@ code {
   }
 } */
 
+
+.main-wrapper{
+    overflow-y: auto;
+    height: 100%;
+    max-height: 500px;
+    padding: 10px 0 140px 0;
+    scroll-behavior: smooth;
+}
+
 button {
   border-radius: 8px;
   cursor: pointer;
@@ -204,6 +213,20 @@ button.btn2 {
   font-weight: 400;
   margin: 5px 0;
 }
+.settings .main_head.ze_subheader h4 {
+  color: #344054;
+  font-weight: 600;
+  margin-bottom: 15px;
+  font-size: 20px;
+  text-align: center;
+}
+.videos .main_head.ze_subheader h4 {
+  color: #344054;
+  font-weight: 600;
+  margin-bottom: 15px;
+  font-size: 20px;
+  text-align: center;
+}
 
 /*  */
 .ze_acc_section {
@@ -274,7 +297,7 @@ button.btn2 {
 
 /*  */
 .ze_history_section {
-  margin-top: 30px;
+  margin-top: 10px;
 }
 .ze_history_section h4 {
   color: #344054;
@@ -351,12 +374,11 @@ button.btn2 {
   color: #7f8691;
 }
 
-
 /* setting */
-.ze_setting_box{
+.ze_setting_box {
   margin-top: 15px;
 }
-.ze_setting_box  select {
+.ze_setting_box select {
   margin-bottom: 10px;
   /* margin-top: 10px; */
   outline: 0;
@@ -364,11 +386,10 @@ button.btn2 {
   background: #ffffff;
   border: 1px solid #d0d5dd;
   box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
-  color: #7F8691;
+  color: #7f8691;
   border-radius: 8px;
   height: 48px;
   cursor: pointer;
-
 }
 
 /* ======== LAYOUT ========*/
@@ -378,6 +399,7 @@ button.btn2 {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding-bottom: 10px;
 }
 
 /* FOOTER */
@@ -429,4 +451,63 @@ button.btn2 {
   background-color: #f3f3fe;
 
   /* background-color: #45CD85; */
+}
+
+.ze_setting_inner_wrapper{
+    display: grid;
+    align-items: center;
+    gap: 1rem;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+}
+
+.ze__settings__label {
+  cursor: pointer;
+  padding: 10px 20px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  background: #ffffff;
+  color: #7f8691;
+}
+
+.ze__settings__label span {
+  font-size: 14px;
+  transition: all 0.3s ease-in-out;
+}
+
+.ze__settings__label input[type='checkbox'] {
+  margin: 0;
+  transition: all 0.3s ease-in-out;
+  border: 1px solid #7f8691;
+
+  /* border: 'none',
+    background: '#7F8691', */
+}
+
+input[type='checkbox']:checked + span {
+  /* border: 1px solid red; */
+  transition: all 0.3s ease-in-out;
+
+  color: #046ed1;
+}
+input[type='radio']:checked + span {
+  /* border: 1px solid red; */
+  transition: all 0.3s ease-in-out;
+
+  color: #046ed1;
+}
+
+
+.btn1.settings_btn{
+  max-width: 150px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
 }

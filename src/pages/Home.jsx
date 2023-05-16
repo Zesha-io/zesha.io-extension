@@ -16,19 +16,10 @@ const Home = () => {
     <>
       <div className={`zesha__box show`}>
         <div className="zesha__ex-wrapper alert--bx">
-          <div
-            className="main-wrapper home"
-            style={{
-              overflowY: 'auto',
-              height: '100%',
-              maxHeight: '500px',
-              padding: '10px 0 140px 0',
-              scrollBehavior: 'smooth',
-            }}
-          >
-            <div>
-              <Header />
-            </div>
+          <div>
+            <Header />
+          </div>
+          <div className="main-wrapper home">
             <div className="balance_main_wrapper">
               <div className="balance_wrapper">
                 <div style={{ width: '100%' }}>

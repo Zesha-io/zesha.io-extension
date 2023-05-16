@@ -7,22 +7,15 @@ const Settings = () => {
     <>
       <div className={`zesha__box show`}>
         <div className="zesha__ex-wrapper alert--bx shadow-lg rounded-2xl">
+          <div>
+            <Header />
+          </div>
           <div
-            className="main-wrapper"
-            style={{
-              overflowY: 'auto',
-              height: '100%',
-              maxHeight: '500px',
-              padding: '10px 0 140px 0',
-              scrollBehavior: 'smooth',
-            }}
+            className="main-wrapper settings"
+            
           >
-            <div>
-              <Header />
-            </div>
-
-            <div className="ze_history_section">
-              <div className="ze_subheader">
+            <div className="">
+              <div className="main_head ze_subheader">
                 <h4>Settings</h4>
               </div>
 
@@ -31,30 +24,87 @@ const Settings = () => {
                     <h4>Account setup</h4>
                   </div> */}
                 <div className="ze_acc_box ze_setting_box">
-                  <label htmlFor="interests">My interest</label>
-                  {/* <select name="interests" id="interests">
-                    <option value="select">Select your interest</option>
-                    <option value="entertainment">Entertainment</option>
-                    <option value="interiors">Interiors</option>
-                  </select> */}
+                  <div className="ze_subheader">
+                    <h4>What type of videos are you interested in?</h4>
+                  </div>
+
+                  <div className="ze_setting_inner_wrapper">
+                    <label className="ze__settings__label">
+                      <input type="checkbox" />
+                      <span>Beauty</span>
+                    </label>
+                    <label className="ze__settings__label">
+                      <input type="checkbox" />
+                      <span>Travel</span>
+                    </label>
+                    <label className="ze__settings__label">
+                      <input type="checkbox" />
+                      <span>Languages</span>
+                    </label>
+                    <label className="ze__settings__label">
+                      <input type="checkbox" />
+                      <span>Food</span>
+                    </label>
+                    <label className="ze__settings__label">
+                      <input type="checkbox" />
+                      <span>Culture</span>
+                    </label>
+                    <label className="ze__settings__label">
+                      <input type="checkbox" />
+                      <span>Cars</span>
+                    </label>
+                    <label className="ze__settings__label">
+                      <input type="checkbox" />
+                      <span>Politics</span>
+                    </label>
+                  </div>
                 </div>
 
                 <div className="ze_acc_box ze_setting_box">
-                  <label htmlFor="frequency">Frequency of recommendations</label>
-                  {/* <select name="frequency" id="frequency">
-                    <option value="select">Select a frequency</option>
-                    <option value="entertainment">Entertainment</option>
-                    <option value="interiors">Interiors</option>
-                  </select> */}
+                  <div className="ze_subheader">
+                    <h4>How often should we recommend videos to you?</h4>
+                  </div>
+
+                  <div className="ze_setting_inner_wrapper">
+                    <label className="ze__settings__label">
+                      <input type="checkbox" />
+                      <span>Daily</span>
+                    </label>
+                    <label className="ze__settings__label">
+                      <input type="checkbox" />
+                      <span>Weekly</span>
+                    </label>
+                    <label className="ze__settings__label">
+                      <input type="checkbox" />
+                      <span>Every 2 days</span>
+                    </label>
+                    <label className="ze__settings__label">
+                      <input type="checkbox" />
+                      <span>Monthly</span>
+                    </label>
+                  </div>
                 </div>
 
                 <div className="ze_acc_box ze_setting_box">
-                  <label htmlFor="view_mode">View mode</label>
-                  {/* <select name="view_mode" id="view_mode">
-                    <option value="select">Select a view mode</option>
-                    <option value="entertainment">Entertainment</option>
-                    <option value="interiors">Interiors</option>
-                  </select> */}
+                  <div className="ze_subheader">
+                    <h4>Choose a view mode?</h4>
+                  </div>
+
+                  <div className="ze_setting_inner_wrapper">
+                    <label className="ze__settings__label">
+                      <input type="radio" />
+                      <span>Overlay</span>
+                    </label>
+                    <label className="ze__settings__label">
+                      <input type="radio" />
+                      <span>Full page</span>
+                    </label>
+                  </div>
+                </div>
+
+
+                <div >
+                  <button className='btn1 settings_btn'>Continue</button>
                 </div>
               </div>
             </div>
