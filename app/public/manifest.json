@@ -1,0 +1,16 @@
+{
+    "name": "Zesha",
+    "description": "With Zesha you can earn reward while enjoying the content you love.",
+    "version": "1.0",
+    "manifest_version": 3,
+    "icons": {
+        "16": "z-16x16.png",
+        "32": "z-32x32.png",
+        "48": "z-48x48.png",
+        "64": "z-64x64.png",
+        "128": "z-128x128.png"
+    },
+    "action": {
+        "default_popup": "popup.html"
+    }
+}
