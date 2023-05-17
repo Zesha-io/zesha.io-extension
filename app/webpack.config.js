@@ -1,6 +1,7 @@
 const path = require("path");
 
 const CopyPlugin = require("copy-webpack-plugin");
+const HtmlPlugin = require("html-webpack-plugin");
 
 module.exports = {
     entry: "./src/index.js",
@@ -18,11 +19,12 @@ module.exports = {
                     to: path.resolve(__dirname, "..", "extension"),
                 },
                 {
-                    from: path.resolve(__dirname, "public", "popup.html"),
-                    to: path.resolve(__dirname, "..", "extension"),
+                    from: path.resolve(__dirname, "public", "images"),
+                    to: path.resolve(__dirname, "..", "extension", "images"),
                 },
             ],
         }),
+        new HtmlPlugin(),
     ],
     module: {
         rules: [
@@ -59,3 +61,14 @@ module.exports = {
     //     },
     // },
 };
+
+function getHtmlPlugins(chunks) {
+    return chunks.map(
+        (chunk) =>
+            new HtmlPlugin({
+                title: "Zesha",
+                filename: `${chunk}.html`,
+                chunks: [chunk],
+            })
+    );
+}
