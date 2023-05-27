@@ -8,7 +8,7 @@ import VideoPlayIcon from "../Icons/VideoPlayIcon";
 const Footer = () => {
     return (
         <>
-            <div className="flex items-center justify-end gap-4 mt-5 flex-row w-full text-sm footer">
+            <div className="flex items-center text-sm footer">
                 <NavLink className="" to={"/"}>
                     <HomeIcon />
                 </NavLink>

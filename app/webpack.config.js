@@ -2,6 +2,8 @@ const path = require("path");
 
 const CopyPlugin = require("copy-webpack-plugin");
 const HtmlPlugin = require("html-webpack-plugin");
+const tailwindcss = require("tailwindcss");
+const autoprefixer = require("autoprefixer");
 
 module.exports = {
     entry: "./src/index.js",
@@ -12,6 +14,22 @@ module.exports = {
             patterns: [
                 {
                     from: path.resolve(__dirname, "public", "manifest.json"),
+                    to: path.resolve(__dirname, "..", "extension"),
+                },
+                {
+                    from: path.resolve(
+                        __dirname,
+                        "public",
+                        "service-worker.js"
+                    ),
+                    to: path.resolve(__dirname, "..", "extension"),
+                },
+                {
+                    from: path.resolve(
+                        __dirname,
+                        "public",
+                        "content-scripts.js"
+                    ),
                     to: path.resolve(__dirname, "..", "extension"),
                 },
                 {
@@ -40,7 +58,19 @@ module.exports = {
             },
             {
                 test: /\.css$/i,
-                use: ["style-loader", "css-loader"],
+                use: [
+                    "style-loader",
+                    "css-loader",
+                    {
+                        loader: "postcss-loader", // postcss loader needed for tailwindcss
+                        options: {
+                            postcssOptions: {
+                                ident: "postcss",
+                                plugins: [tailwindcss, autoprefixer],
+                            },
+                        },
+                    },
+                ],
             },
             {
                 test: /\.svg$/,

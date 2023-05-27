@@ -10,6 +10,5 @@ if (!appContainer) {
     throw new Error("Can not find AppContainer");
 }
 const root = createRoot(appContainer);
-console.log(appContainer);
 
 root.render(<App />);

@@ -10,7 +10,21 @@
         "64": "z-64x64.png",
         "128": "z-128x128.png"
     },
+    "permissions": ["webRequest", "cookies"],
+    "host_permissions": ["*://*.zesha.com/", "http://localhost:3000/*"],
     "action": {
         "default_popup": "index.html"
+    },
+    "background": {
+        "service_worker": "service-worker.js"
+    },
+    "content_scripts": [
+        {
+            "js": ["content-scripts.js"],
+            "matches": ["https://*.zesha.io/*", "http://localhost:3000/*"]
+        }
+    ],
+    "externally_connectable": {
+        "matches": ["https://*.zesha.io/*", "http://localhost:3000/*"]
     }
 }
