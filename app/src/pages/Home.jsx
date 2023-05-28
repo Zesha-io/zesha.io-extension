@@ -112,10 +112,12 @@ const Home = ({ account, profile, earningHistory }) => {
                                                 TFUEL{" "}
                                                 <span className="">
                                                     ~ $
-                                                    {Number(
-                                                        tfuelUsd *
-                                                            analytics?.walletbalance
-                                                    ).toFixed(2)}
+                                                    {analytics?.walletbalance
+                                                        ? Number(
+                                                              tfuelUsd *
+                                                                  analytics?.walletbalance
+                                                          ).toFixed(2)
+                                                        : 0}
                                                 </span>
                                             </h5>
                                             <p>

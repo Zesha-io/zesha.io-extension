@@ -11559,7 +11559,7 @@ var Home = function Home(_ref) {
     className: ""
   }, (analytics === null || analytics === void 0 ? void 0 : analytics.walletbalance) || 0, " ", "TFUEL", " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
     className: ""
-  }, "~ $", Number(tfuelUsd * (analytics === null || analytics === void 0 ? void 0 : analytics.walletbalance)).toFixed(2))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+  }, "~ $", analytics !== null && analytics !== void 0 && analytics.walletbalance ? Number(tfuelUsd * (analytics === null || analytics === void 0 ? void 0 : analytics.walletbalance)).toFixed(2) : 0)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
     onClick: function onClick() {
       window.open("".concat(_utils_constants__WEBPACK_IMPORTED_MODULE_10__.hostUrl, "/individual/payout"), "_blank");
     }
