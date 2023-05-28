@@ -119,14 +119,16 @@ const Home = ({ account, profile, earningHistory }) => {
                                                 </span>
                                             </h5>
                                             <p>
-                                                <a
-                                                    target="_blank"
-                                                    href={`${hostUrl} /
-                                                        individual /
-                                                        payout`}
+                                                <span
+                                                    onClick={() => {
+                                                        window.open(
+                                                            `${hostUrl}/individual/payout`,
+                                                            "_blank"
+                                                        );
+                                                    }}
                                                 >
                                                     Withdraw
-                                                </a>
+                                                </span>
                                             </p>
                                         </div>
                                     </div>
@@ -203,8 +205,13 @@ const Home = ({ account, profile, earningHistory }) => {
                                                     {recommendations.map(
                                                         (video, index) => (
                                                             <div
-                                                                className="video_card"
+                                                                className="video_card cursor-pointer"
                                                                 key={index}
+                                                                onClick={() => {
+                                                                    navigate(
+                                                                        "/videos"
+                                                                    );
+                                                                }}
                                                             >
                                                                 <div className="video_container">
                                                                     {video.id}

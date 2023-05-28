@@ -77,11 +77,6 @@ function App() {
         }
     }, [account]);
 
-    useEffect(() => {
-        if (profile) {
-            console.log("Profileee: ", profile);
-        }
-    }, [profile]);
 
     return (
         <Router>

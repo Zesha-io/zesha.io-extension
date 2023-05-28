@@ -5,6 +5,7 @@ import VideoJS from "../components/VideoJS";
 import ThumbsUpIcon from "../components/Icons/ThumbsUpIcon";
 import ThumbsDownIcon from "../components/Icons/ThumbsDownIcon";
 import EyeIcon from "../components/Icons/EyeIcon";
+import LineArrowIcon from "../components/Icons/LineArrowIcon";
 
 import { hostUrl, backendUrl } from "../utils/constants";
 import { toDate, toMinute, convertTimeToVideoTime } from "../utils/functions";
@@ -260,7 +261,6 @@ const Videos = ({ account }) => {
                 player.ads.endLinearAdMode();
 
                 payForAds(player, sources[player.state.track]);
-                console.log("ad ended", player.state);
             });
         };
 
@@ -304,6 +304,16 @@ const Videos = ({ account }) => {
         // });
     };
 
+    const pictureNpicture = () => {
+        if (videojsPlayer) {
+            if (videojsPlayer.isInPictureInPicture()) {
+                videojsPlayer.exitPictureInPicture();
+            } else {
+                videojsPlayer.requestPictureInPicture();
+            }
+        }
+    };
+
     return (
         <>
             <div className="zesha__box show">
@@ -337,8 +347,8 @@ const Videos = ({ account }) => {
                                 {playing && (
                                     <>
                                         <div className="flex w-full">
-                                            <div className="flex w-full">
-                                                <div className="flex inline-flex items-center gap p-4 mt-3  bg-[#f2f2f2] px-2 py-1 rounded-full">
+                                            <div className="flex w-full ">
+                                                <div className="flex inline-flex  shadow-md items-center gap p-4 mt-3  bg-[#f2f2f2] px-2 py-1 rounded-full">
                                                     <span
                                                         className={`inline-flex  items-center cursor-pointer ${
                                                             liking
@@ -348,7 +358,7 @@ const Videos = ({ account }) => {
                                                         onClick={likePlaying}
                                                     >
                                                         <ThumbsUpIcon />{" "}
-                                                        <span className="font-bold pl-2">
+                                                        <span className="font-medium pl-2">
                                                             {playing?.analytics
                                                                 ?.totallikes ||
                                                                 0}
@@ -366,27 +376,41 @@ const Videos = ({ account }) => {
                                                         onClick={dislikePlaying}
                                                     >
                                                         <ThumbsDownIcon />{" "}
-                                                        <span className="font-bold pl-2">
+                                                        <span className="font-medium pl-2">
                                                             {playing?.analytics
                                                                 ?.totaldislikes ||
                                                                 0}
                                                         </span>
                                                     </span>
                                                 </div>
-                                                <div className="ml-4 flex inline-flex items-center gap p-4 mt-3  bg-[#f2f2f2] px-2 py-1 rounded-full">
+                                                <div className="ml-4 flex inline-flex items-center shadow-md gap p-4 mt-3  bg-[#f2f2f2] px-2 py-1 rounded-full">
                                                     <span className="inline-flex  items-center">
                                                         <EyeIcon />{" "}
-                                                        <span className="font-bold pl-2">
+                                                        <span className="font-medium pl-2">
                                                             {playing?.analytics
                                                                 ?.totalvideoviews ||
                                                                 0}
                                                         </span>
                                                     </span>
                                                 </div>
+
+                                                <div className="ml-4 flex inline-flex items-center cursor-pointer shadow-md gap p-4 mt-3  bg-[#f2f2f2] px-2 py-1 rounded-full">
+                                                    <span
+                                                        className="inline-flex items-center"
+                                                        onClick={
+                                                            pictureNpicture
+                                                        }
+                                                    >
+                                                        <span className="font-medium pl-2">
+                                                            Overlay Mode{" "}
+                                                            <LineArrowIcon />
+                                                        </span>
+                                                    </span>
+                                                </div>
                                             </div>
                                         </div>
                                         <div className="flex flex-col">
-                                            <p className="font-bold w-full my-1">
+                                            <p className="font-bold text-xl my-3 w-full">
                                                 {playing.title}
                                             </p>
 
