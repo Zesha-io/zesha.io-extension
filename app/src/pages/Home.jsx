@@ -11,24 +11,15 @@ import Header from "../components/Layout/header";
 import EmptyState from "../components/EmptyState";
 import { useNavigate } from "react-router-dom";
 import { hostUrl, backendUrl } from "../utils/constants";
-
-const convertTimeToVideoTime = (seconds) => {
-    const hours = Math.floor(seconds / 3600);
-    const minutes = Math.floor((seconds % 3600) / 60);
-    const remainingSeconds = Math.ceil(seconds % 60);
-
-    return (
-        hours ? [hours, minutes, remainingSeconds] : [minutes, remainingSeconds]
-    )
-        .map((value) => value.toString().padStart(2, "0"))
-        .join(":");
-};
+import { toDate, toMinutes, convertTimeToVideoTime } from "../utils/functions";
 
 const Home = ({ account, profile, earningHistory }) => {
     const navigate = useNavigate();
     const [analytics, setAnalytics] = useState(null);
     const [tfuelUsd, setTfuelUsd] = useState(0);
     const [recommendations, setRecommendations] = useState([]);
+
+    earningHistory = earningHistory.slice(0, 3);
 
     // useEffect(() => {
     //     console.log("profile", profile);
@@ -95,16 +86,6 @@ const Home = ({ account, profile, earningHistory }) => {
 
             setTfuelUsd(price * analytics.walletbalance);
         }
-    };
-
-    const toMinutes = (seconds) => {
-        return Math.floor(seconds / 60);
-    };
-
-    const toDate = (date) => {
-        const d = new Date(date);
-
-        return `${d.getDate()}/${d.getMonth() + 1}/${d.getFullYear()}`;
     };
 
     return (

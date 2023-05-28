@@ -112,7 +112,10 @@ function App() {
                                 />
                             }
                         />
-                        <Route path="/videos" element={<Videos />} />
+                        <Route
+                            path="/videos"
+                            element={<Videos account={account} />}
+                        />
                         <Route
                             path="/history"
                             element={

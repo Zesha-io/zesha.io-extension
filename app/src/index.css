@@ -608,3 +608,18 @@ input[type="radio"]:checked + span {
     margin: 0;
     font-size: 10px;
 }
+
+.video-js,
+.data-vjs-player,
+.vjs-theme-city {
+    width: 100% !important;
+}
+
+.video-js,
+#playlist-options {
+    height: 400px !important;
+}
+
+#playlist-options {
+    overflow-y: scroll;
+}
