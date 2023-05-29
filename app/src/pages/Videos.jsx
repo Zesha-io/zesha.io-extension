@@ -410,11 +410,11 @@ const Videos = ({ account }) => {
                                             </div>
                                         </div>
                                         <div className="flex flex-col">
-                                            <p className="font-bold text-xl my-3 w-full">
+                                            <p className="font-bold text-lg my-3 w-full">
                                                 {playing.title}
                                             </p>
 
-                                            <p className="font-normal my-0">
+                                            <p className="font-normal mt-0 mb-3">
                                                 {playing.description}
                                             </p>
                                         </div>

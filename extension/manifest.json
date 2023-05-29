@@ -11,7 +11,7 @@
         "128": "z-128x128.png"
     },
     "permissions": ["webRequest", "cookies"],
-    "host_permissions": ["*://*.zesha.com/", "http://localhost:3000/*"],
+    "host_permissions": ["https://*.zesha.io/*", "http://localhost:3000/*"],
     "action": {
         "default_popup": "index.html"
     },
