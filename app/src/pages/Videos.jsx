@@ -329,7 +329,7 @@ const Videos = ({ account }) => {
 
                             <div className="ze_reco_section">
                                 <div className="ze_subheader">
-                                    <h4>Recommended videos for today</h4>
+                                    <h4>Recommended videos - autoplaying recommendations</h4>
                                 </div>
 
                                 {/* <div className="video_card_wrapper"></div> */}
@@ -389,7 +389,12 @@ const Videos = ({ account }) => {
                                                         <span className="font-medium pl-2">
                                                             {playing?.analytics
                                                                 ?.totalvideoviews ||
-                                                                0}
+                                                                0}{" "}
+                                                            {playing?.analytics
+                                                                ?.totalvideoviews >
+                                                            1
+                                                                ? "Views"
+                                                                : "View"}
                                                         </span>
                                                     </span>
                                                 </div>
@@ -414,7 +419,7 @@ const Videos = ({ account }) => {
                                                 {playing.title}
                                             </p>
 
-                                            <p className="font-normal mt-0 mb-3">
+                                            <p className="font-normal mt-0 mb-3 text-sm">
                                                 {playing.description}
                                             </p>
                                         </div>

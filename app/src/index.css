@@ -127,6 +127,8 @@ button.btn1 {
     color: #fff;
     border: none;
     box-shadow: 0px 3px 6px rgba(11, 10, 29, 0.07);
+    font-family: "Gilroy";
+    font-weight: 500;
 }
 
 button.btn2 {
@@ -140,6 +142,7 @@ button.btn2 {
     display: flex;
     align-items: center;
     gap: 1rem;
+    font-family: "Gilroy";
 }
 
 .share-btn {
@@ -151,7 +154,7 @@ button.btn2 {
 }
 
 .balance_main_wrapper {
-    padding: 20px 10px;
+    padding: 20px 0px;
 }
 .balance_wrapper {
     background: #ffffff;
@@ -160,6 +163,7 @@ button.btn2 {
     padding: 20px 10px;
     /* margin-bottom: 15px; */
     border-radius: 8px;
+    border: 1px solid #4176bc33;
 }
 
 .icon-box {
@@ -208,7 +212,7 @@ button.btn2 {
 .ze_subheader h4 {
     color: #334155;
     font-size: 14px;
-    font-weight: 400;
+    font-weight: 600;
     margin: 5px 0;
 }
 .settings .main_head.ze_subheader h4 {
@@ -319,6 +323,7 @@ button.btn2 {
     gap: 0.5rem;
     width: 100%;
     padding: 1rem 0;
+    border-bottom: 1px solid rgb(0 0 0 / 0.1);
 }
 
 .ze_history_main_card:not(:last-child) {

@@ -23,7 +23,7 @@ const History = ({ earningHistory }) => {
                                 {earningHistory.length > 0 ? (
                                     earningHistory.map((earning, index) => (
                                         <div
-                                            className="divide-y divide-[#EEEFF2] py-1"
+                                            className="divide-y divide-[#EEEFF2]"
                                             key={index}
                                         >
                                             <div className="ze_history_main_card">
