@@ -1,8 +1,8 @@
 chrome.runtime.onInstalled.addListener(async () => {
-    // const extensionId = chrome.runtime.id;
-    // chrome.tabs.create({
-    //     url: "http://localhost:3000/welcome?extensionId=" + extensionId,
-    // });
+    const extensionId = chrome.runtime.id;
+    chrome.tabs.create({
+        url: "http://www.zesha.io/welcome?extensionId=" + extensionId,
+    });
 });
 
 // chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
@@ -12,6 +12,4 @@ chrome.runtime.onInstalled.addListener(async () => {
 // }
 // });
 
-chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
-   
-});
+chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {});

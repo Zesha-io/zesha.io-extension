@@ -64,8 +64,8 @@ const UnAuthenticated = ({ host }) => {
                                         target="_blank"
                                         className=""
                                     >
-                                        Login to start receiving your
-                                        recommendations
+                                        Login to get recommendations and start
+                                        earning
                                     </Link>
                                 </div>
                             </div>
