@@ -9,7 +9,7 @@ const History = ({ earningHistory }) => {
     return (
         <>
             <div className={`zesha__box show`}>
-                <div className="zesha__ex-wrapper alert--bx shadow-lg rounded-2xl">
+                <div className="zesha__ex-wrapper alert--bx shadow-lg rounded-2xlxx">
                     <div>
                         <Header />
                     </div>
@@ -21,56 +21,64 @@ const History = ({ earningHistory }) => {
 
                             <div className="ze_history_box">
                                 {earningHistory.length > 0 ? (
-                                    earningHistory.map((earning, index) => (
-                                        <div
-                                            className="divide-y divide-[#EEEFF2]"
-                                            key={index}
-                                        >
-                                            <div className="ze_history_main_card">
-                                                <span className="icon-box">
-                                                    <VideoPlayIcon />
-                                                </span>
-                                                <div className="ze_history_main_box">
-                                                    <div className="ze_history_title">
-                                                        <h5 className="line-clamp-1">
-                                                            You viewed{" "}
-                                                            {
-                                                                earning?.video
-                                                                    ?.title
-                                                            }{" "}
-                                                            -{" "}
-                                                            {toMinutes(
-                                                                earning.video
-                                                                    .videoLength
-                                                            )}{" "}
-                                                            mins
-                                                        </h5>
-                                                        <span className="text-right">
-                                                            {
-                                                                earning.viewerAmount
-                                                            }{" "}
-                                                            TFUEL
+                                    earningHistory.map(
+                                        (earning, index) =>
+                                            earning.video && (
+                                                <div
+                                                    className="divide-y divide-[#EEEFF2]"
+                                                    key={index}
+                                                >
+                                                    <div className="ze_history_main_card">
+                                                        <span className="icon-box">
+                                                            <VideoPlayIcon />
                                                         </span>
-                                                    </div>
+                                                        <div className="ze_history_main_box">
+                                                            <div className="ze_history_title">
+                                                                <h5 className="line-clamp-1">
+                                                                    You viewed{" "}
+                                                                    {
+                                                                        earning
+                                                                            ?.video
+                                                                            ?.title
+                                                                    }{" "}
+                                                                    -{" "}
+                                                                    {toMinutes(
+                                                                        earning
+                                                                            ?.video
+                                                                            ?.videoLength
+                                                                    )}{" "}
+                                                                    mins
+                                                                </h5>
+                                                                <span className="text-right">
+                                                                    {
+                                                                        earning.viewerAmount
+                                                                    }{" "}
+                                                                    TFUEL
+                                                                </span>
+                                                            </div>
 
-                                                    <div className="flex items-center justify-between w-full ze_history_subtitle">
-                                                        <span className="ze_history_date">
-                                                            {toDate(
-                                                                earning?.video
-                                                                    ?.createdAt
-                                                            )}
-                                                        </span>
-                                                        <span className="text-[#7F8691] text-xs font-normal">
-                                                            ~$
-                                                            {Number(
-                                                                earning.viewerAmountUSD
-                                                            ).toFixed(4)}
-                                                        </span>
+                                                            <div className="flex items-center justify-between w-full ze_history_subtitle">
+                                                                <span className="ze_history_date">
+                                                                    {toDate(
+                                                                        earning
+                                                                            ?.video
+                                                                            ?.createdAt
+                                                                    )}
+                                                                </span>
+                                                                <span className="text-[#7F8691] text-xs font-normal">
+                                                                    ~$
+                                                                    {Number(
+                                                                        earning.viewerAmountUSD
+                                                                    ).toFixed(
+                                                                        4
+                                                                    )}
+                                                                </span>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </div>
-                                    ))
+                                            )
+                                    )
                                 ) : (
                                     <EmptyState
                                         text={"Start watching to earn"}

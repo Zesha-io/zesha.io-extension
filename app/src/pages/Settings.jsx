@@ -95,7 +95,7 @@ const Settings = ({ profile, syncAccount }) => {
     return (
         <>
             <div className={`zesha__box show`}>
-                <div className="zesha__ex-wrapper alert--bx shadow-lg rounded-2xl">
+                <div className="zesha__ex-wrapper alert--bx shadow-lg rounded-2xlxx">
                     <div>
                         <Header />
                     </div>
